@@ -6,13 +6,13 @@
 
 ## Acceptance Criteria
 
-*Given a quiz site
-*When we use Use Node.js and Express.js to deploy a RESTful API with authentication and protect API keys and sensitive information with environment variables
-*Then we can exchange information securely over the internet
-*When we us PostgreSQL and the Sequelize ORM for the database
-*Then we can store and recall user records
-*When we use Handlebars.js as the template engine
-*Then we can ensure responsiveness
+* Given a quiz site
+* When we use Use Node.js and Express.js to deploy a RESTful API with authentication and protect API keys and sensitive information with environment variables
+* Then we can exchange information securely over the internet
+* When we us PostgreSQL and the Sequelize ORM for the database
+* Then we can store and recall user records
+* When we use Handlebars.js as the template engine
+* Then we can ensure responsiveness
 
 ## Description
 
