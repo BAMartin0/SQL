@@ -4,8 +4,7 @@ const path = require('path');
 // ? Import express-handlebars
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
-const path = require('path');
-
+const api = require('./routes/index.js');
 // ? Sets up the Express App
 const app = express();
 app.use(express.json());
