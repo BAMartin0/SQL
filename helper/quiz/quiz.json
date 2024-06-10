@@ -1,0 +1,62 @@
+[
+    {
+        "type": "boolean",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "Skateboarding was included in the 2020 Summer Olympics in Tokyo.",
+        "correct_answer": "True",
+        "incorrect_answers": [
+            "False"
+        ],
+        "user_answer": "",
+        "was_right": false
+    },
+    {
+        "type": "boolean",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "Formula E is an auto racing series that uses hybrid electric race cars.",
+        "correct_answer": "False",
+        "incorrect_answers": [
+            "True"
+        ],
+        "user_answer": "",
+        "was_right": false
+    },
+    {
+        "type": "boolean",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "Soccer player Cristiano Ronaldo opened a museum dedicated to himself.",
+        "correct_answer": "True",
+        "incorrect_answers": [
+            "False"
+        ],
+        "user_answer": "",
+        "was_right": false
+    },
+    {
+        "type": "boolean",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "Tennis was once known as Racquetball.",
+        "correct_answer": "False",
+        "incorrect_answers": [
+            "True"
+        ],
+        "user_answer": "",
+        "was_right": false
+    },
+    {
+        "type": "boolean",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "In 2008, Usain Bolt set the world record for the 100 meters with one shoelace untied.",
+        "correct_answer": "True",
+        "incorrect_answers": [
+            "False"
+        ],
+        "user_answer": "",
+        "was_right": false
+    }
+]
