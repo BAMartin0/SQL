@@ -17,16 +17,20 @@ const getInput = (input) =>
         console.error('error POST',error);
     });
 
-
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('userForm');
+    const form = document.getElementById('createQuizTable');
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
+      //  console.log('click');
         const formData = new FormData(form);
+       // console.log(formData);
         const entries = [...formData.entries()];
+       // console.log(entries);
         //console.log(entries);
         const input = fixForm(entries);
+        console.log(input);
+
 
         getInput(input)
         .then((data)=>{
@@ -38,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error("error at end",err);
         });
 
+
     });
 });
 
@@ -45,9 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function fixForm(form){
 
     const newForm = {};
-    const category = form[0];
-    const difficulty = form[1];
-    const numQuestions = form[2];
+    const category = form[1];
+    const difficulty = form[2];
+    const numQuestions = form[0];
     const type = form[3];
 
     newForm.category = category[1];
