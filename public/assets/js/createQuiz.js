@@ -32,11 +32,23 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(input);
 
 
+        //getInput(input)
         getInput(input)
-        .then((data)=>{
+        .then(()=>{
             
-            console.log(data);
-            alert('Form submitted! Check the console for details.');
+            console.log('success');
+           // console.log(data);
+           // alert('Form submitted! Check the console for details.');
+        }).then(()=>{
+            fetch('/api/input',{
+                method: 'GET'
+            })
+            .then((response) => {
+                return response;
+            })
+            .catch((error) =>{
+                console.error('no html return',error);
+            });
         })
         .catch((err)=>{
             console.error("error at end",err);
@@ -88,3 +100,34 @@ function processUserInput(input){
     return input;
     
 }
+
+const getPage = (input) =>
+
+    fetch('/api/input',{
+        method: 'POST',
+        headers:{
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify(input),
+    })
+    .then( response => {
+        if(!response.ok){
+            throw new Error('didnt get html');
+        }
+
+        return response.text();
+    })
+    .then(html =>{
+        const blob = new Blob([html], {type: 'text/html'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'quiz.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    })
+    .catch(error => {
+        console.error('no html',error);
+    });

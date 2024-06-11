@@ -22,6 +22,9 @@ router.post('/input',(req,res)=>{
     .catch((err)=>{
         console.error('error in server api',err);
     });
-})
+});
 
+router.get('/input',(req,res)=>{
+    res.sendFile(path.join(__dirname,'/public/quiz.html'));
+});
 module.exports = router;
