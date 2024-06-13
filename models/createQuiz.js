@@ -1,4 +1,9 @@
 //post user data to the node server,js
+//const express = require('express');
+// const router = require('express').Router();
+// const path = require('path');
+// const createTable = require('./quiz.js');
+
 const getInput = (input) =>
 
     fetch('/api/input',{
@@ -34,21 +39,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         //getInput(input)
         getInput(input)
-        .then(()=>{
+        .then((data)=>{
             
-            console.log('success');
+            createTable(data);
+            //console.log(message);
            // console.log(data);
            // alert('Form submitted! Check the console for details.');
-        }).then(()=>{
-            fetch('/api/input',{
-                method: 'GET'
-            })
-            .then((response) => {
-                return response;
-            })
-            .catch((error) =>{
-                console.error('no html return',error);
-            });
+           // createQuiz(data);
+           console.log(createQuiz(data));
         })
         .catch((err)=>{
             console.error("error at end",err);
@@ -131,3 +129,5 @@ const getPage = (input) =>
     .catch(error => {
         console.error('no html',error);
     });
+
+console.log('you are looking at createQuiz');

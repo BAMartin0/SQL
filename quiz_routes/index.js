@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const path = require('path');
-const {callAPI, createQuiz, getQuizURL} = require('../helper/quizAPI');
+const {callAPI, createQuiz, getQuizURL} = require('./quizAPI');
 
 router.post('/input',(req,res)=>{
 

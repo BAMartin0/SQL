@@ -1,0 +1,86 @@
+[
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "What is the capital of South Korea?",
+        "correct_answer": "Seoul",
+        "incorrect_answers": [
+            "Pyongyang",
+            "Taegu",
+            "Kitakyushu"
+        ],
+        "user_answer": "",
+        "was_right": false
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "What is Laos?",
+        "correct_answer": "Country",
+        "incorrect_answers": [
+            "Region",
+            "River",
+            "City"
+        ],
+        "user_answer": "",
+        "was_right": false
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "Which nation claims ownership of Antarctica?",
+        "correct_answer": "No one, but there are claims.",
+        "incorrect_answers": [
+            "United States of America",
+            "United Nations",
+            "Australia"
+        ],
+        "user_answer": "",
+        "was_right": false
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "All of the following are classified as Finno-Ugric languages EXCEPT:",
+        "correct_answer": "Samoyedic",
+        "incorrect_answers": [
+            "Hungarian",
+            "Finnish",
+            "Estonian"
+        ],
+        "user_answer": "",
+        "was_right": false
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "Which of the following former Yugoslavian states is landlocked?",
+        "correct_answer": "Serbia",
+        "incorrect_answers": [
+            "Bosnia and Herzegovina",
+            "Montenegro",
+            "Croatia"
+        ],
+        "user_answer": "",
+        "was_right": false
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "What is the capital of Jamaica?",
+        "correct_answer": "Kingston",
+        "incorrect_answers": [
+            "San Juan",
+            "Port-au-Prince",
+            "Bridgetown"
+        ],
+        "user_answer": "",
+        "was_right": false
+    }
+]
