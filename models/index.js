@@ -2,16 +2,16 @@ const Sequelize = require('sequelize');
 
 const User = require('./user');
 const Questions = require('./questions');
-const Answers = require('./answers');
-const Scores = require('./scores');
+// const Answers = require('./answers');
+// const Scores = require('./scores');
 
-User.hasMany(Answers);
-Answers.belongsTo(User);
+// User.hasMany(Answers);
+// Answers.belongsTo(User);
 
-Questions.hasMany(Answers);
-Answers.belongsTo(Questions);
+// Questions.hasMany(Answers);
+// Answers.belongsTo(Questions);
 
-Questions.hasOne(Answers, { as: "correctAnswer" });
+// Questions.hasOne(Answers, { as: "correctAnswer" });
 
 
 sequelize

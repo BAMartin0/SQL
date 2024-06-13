@@ -1,0 +1,198 @@
+[
+    {
+        
+        "difficulty": "medium",
+        "category": "Art",
+        "question": "Who painted the epic mural Guernica?",
+        "correct_answer": "Pablo Picasso",
+        "answers": [
+            "Francisco Goya",
+            "Leonardo da Vinci",
+            "Henri Matisse"
+        ],
+        "answer": "",
+        "is_correct": false
+    },
+    {
+        
+        "difficulty": "medium",
+        "category": "Art",
+        "question": "Which of these are the name of a famous marker brand?",
+        "correct_answer": "Copic",
+        "incorrect_answers": [
+            "Dopix",
+            "Cofix",
+            "Marx"
+        ],
+        "answer": "",
+        "is_correct": false
+    },
+    {
+        
+        "difficulty": "medium",
+        "category": "Art",
+        "question": "Who designed the Chupa Chups logo?",
+        "correct_answer": "Salvador Dali",
+        "incorrect_answers": [
+            "Pablo Picasso",
+            "Andy Warhol",
+            "Vincent van Gogh"
+        ],
+        "answer": "",
+        "is_correct": false
+    },
+    {
+        
+        "difficulty": "medium",
+        "category": "Art",
+        "question": "Which one of these paintings is not by Caspar David Friedrich?",
+        "correct_answer": "The Black Sea",
+        "incorrect_answers": [
+            "The Sea of Ice",
+            "Wanderer above the Sea of Fog",
+            "The Monk by the Sea"
+        ],
+        "answer": "",
+        "is_correct": false
+    },
+    {
+        
+        "difficulty": "medium",
+        "category": "Art",
+        "question": "Which artist&#039;s style was to use small different colored dots to create a picture?",
+        "correct_answer": "Georges Seurat",
+        "incorrect_answers": [
+            "Paul C&eacute;zanne",
+            "Vincent Van Gogh",
+            "Henri Rousseau"
+        ],
+        "answer": "Georges Seurat",
+        "is_correct": false
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Art",
+        "question": "What nationality was the surrealist painter Salvador Dali?",
+        "correct_answer": "Spanish",
+        "incorrect_answers": [
+            "Italian",
+            "French",
+            "Portuguese"
+        ],
+        "answer": "Spanish",
+        "is_correct": false
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Art",
+        "question": "Which time signature is commonly known as &ldquo;Cut Time?&rdquo;",
+        "correct_answer": "2/2",
+        "incorrect_answers": [
+            "4/4",
+            "6/8",
+            "3/4"
+        ],
+        "answer": "4/4",
+        "is_correct": false
+    }, 
+    {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Art",
+    "question": "Which famous painting is also known as 'La Gioconda'?",
+    "correct_answer": "Mona Lisa",
+    "incorrect_answers": [
+      "The Starry Night",
+      "The Persistence of Memory",
+      "The Scream"
+    ],
+    "answer": "The Starry Night",
+    "is_correct": false
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "History",
+    "question": "Who was the first Emperor of China?",
+    "correct_answer": "Qin Shi Huang",
+    "incorrect_answers": [
+      "Liu Bang",
+      "Kangxi Emperor",
+      "Emperor Wu of Han"
+    ],
+    "answer": "Qin Shi Huang",
+    "is_correct": true
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Geography",
+    "question": "What is the capital city of Australia?",
+    "correct_answer": "Canberra",
+    "incorrect_answers": [
+      "Sydney",
+      "Melbourne",
+      "Brisbane"
+    ],
+    "answer": "Sydney",
+    "is_correct": false
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Science",
+    "question": "What is the chemical symbol for the element with atomic number 7?",
+    "correct_answer": "N",
+    "incorrect_answers": [
+      "Na",
+      "Ne",
+      "Ni"
+    ],
+    "answer": "N",
+    "is_correct": true
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Literature",
+    "question": "Who wrote 'Pride and Prejudice'?",
+    "correct_answer": "Jane Austen",
+    "incorrect_answers": [
+      "Charlotte Bronte",
+      "Mary Shelley",
+      "Emily Bronte"
+    ],
+    "answer": "Mary Shelley",
+    "is_correct": false
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Music",
+    "question": "Which composer wrote the 'Moonlight Sonata'?",
+    "correct_answer": "Ludwig van Beethoven",
+    "incorrect_answers": [
+      "Johann Sebastian Bach",
+      "Wolfgang Amadeus Mozart",
+      "Franz Schubert"
+    ],
+    "answer": "Ludwig van Beethoven",
+    "is_correct": true
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Movies",
+    "question": "Which movie features the quote, 'Here's looking at you, kid'?",
+    "correct_answer": "Casablanca",
+    "incorrect_answers": [
+      "Gone with the Wind",
+      "The Godfather",
+      "Citizen Kane"
+    ],
+    "answer": "The Godfather",
+    "is_correct": false
+  }
+]
