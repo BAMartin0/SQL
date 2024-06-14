@@ -41,13 +41,16 @@ document.addEventListener('DOMContentLoaded', function() {
         getInput(input)
         .then((data)=>{
             
-            createTable(data);
+           // createTable(data);
             const dataArray = createQuiz(data);
-            createRow(dataArray[0], 0, 'headerTable');
-            for(let i = 1; i < dataArray.length; i++){
-                const count = i-1;
-                createRow(dataArray[i], i, `row_${count}`);
+            firstRow(dataArray[0], 0, 'createQuizTable');
+            for(let i = 0; i < dataArray.length; i++){
+                const count = i;
+                const num = i+1;
+                createRow(dataArray[i], num, `row_${count}`);
             }
+                lastRow = dataArray.length;
+                addButton(`row_${lastRow}`);
         
             
             //console.log(message);
