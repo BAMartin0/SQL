@@ -12,7 +12,7 @@ const fs = require('fs');
 
 //class for creating an object that represents one question with all its details (type, difficulty, category...)
 class Question{
-    constructor(type, difficulty, category, question, correct_answer, incorrect_answers, user_answer, was_right){
+    constructor(type, difficulty, category, question, correct_answer, incorrect_answers, user_answer, was_correct){
         this.type = type;
         this.difficulty = difficulty;
         this.category = category;
@@ -20,7 +20,7 @@ class Question{
         this.correct_answer = correct_answer;
         this.incorrect_answers = incorrect_answers;
         this.user_answer = user_answer;
-        this.was_right = was_right;
+        this.was_correct = was_correct;
     }
 }
 
@@ -66,7 +66,7 @@ function createQuiz(data){
         allQuestions[i].question = results[i].question;
         allQuestions[i].incorrect_answers = results[i].incorrect_answers;
         allQuestions[i].user_answer = '';
-        allQuestions[i].was_right = false;
+        allQuestions[i].was_correct = false;
     }
     saveQuiz(allQuestions);
 
@@ -78,7 +78,7 @@ function getQuizURL(quizDetails){
 
     const {category, difficulty, numQuestions, type} = quizDetails;
   //  console.log(quizDetails);
-    const url =`https://opentdb.com/api.php?amount=${numQuestions}&category=${category}&difficulty=${difficulty}&type=${type}`;
+    const url =`https://opentdb.com/api.php?amount=${numQuestions}&category=${category}&difficulty=${difficulty}&type=multiple`;
 
     return url;
 

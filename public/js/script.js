@@ -1,14 +1,14 @@
 
 
-const getQuizPage = (input) =>
+// const getQuizPage = (input) =>
 
-document.addEventListener('DOMContentLoaded', function() {
-    const quizPage = document.getElementById('quiz');
+// document.addEventListener('DOMContentLoaded', function() {
+//     const quizPage = document.getElementById('quiz');
 
-    quizPage.addEventListener('click', function(event) {
+//     quizPage.addEventListener('click', function(event) {
 
 
-     console.log('we clicked!');
+//      console.log('we clicked!');
 
-});
-});
+// });
+// });

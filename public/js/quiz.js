@@ -304,14 +304,14 @@ function checkBoxSelection(data){
                     if(answer === data[dataCount].correct_answer){
                      //   console.log('your were right')
                         row.getElementsByClassName('userAnswer')[0].textContent = 'Correct';
-                        data[dataCount].was_right = true;
+                        data[dataCount].was_correct = true;
 
                     }
                     else{
 
                       //  console.log('you were wrong');
                         row.getElementsByClassName('userAnswer')[0].textContent = 'Wrong';
-                        data[dataCount].was_right = false;
+                        data[dataCount].was_correct = false;
                     }
                     
                     dataCount++;
