@@ -84,4 +84,4 @@ function getQuizURL(quizDetails){
 
 }
 
-module.exports = {callAPI, createQuiz, getQuizURL};
+module.exports = {callAPI, createQuiz, getQuizURL, saveQuiz};

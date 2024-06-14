@@ -15,7 +15,7 @@ function questionRow(data, num, appendTo, isAnswer){
     Qcell.textContent =  data[0];
     let mixedArray = mixUp([1,2,3,4]);
     mixedArray = mixUp(mixedArray);
-    console.log(mixedArray,' mixed array');
+   // console.log(mixedArray,' mixed array');
     const op1 = document.createElement('td');
         op1.textContent = data[mixedArray[0]];
         op1.className = 'question';
@@ -98,7 +98,7 @@ function answerRow(data, num, appendTo, isAnswer){
         newRow.appendChild(op4);         
         newRow.appendChild(answerRow);
 
-        oldRow.parentNode.appendChild(newRow, newRow.id);
+        oldRow.parentNode.appendChild(newRow);
 
 }
 
@@ -184,28 +184,48 @@ function createQuiz(data, numQuestions){
 
 // }
 
-function addButton(parent, data){
+function addButton(parent, data, option){
 
         // console.log(data);
+     //   console.log(parent);
         const oldRow = document.getElementById(`${parent}`);
+     //   console.log(oldRow);
         const btn = document.createElement('submit');
         btn.className = 'btn btn-primary';
         btn.type = 'submit';
-        btn.textContent = 'Submit';
+        btn.textContent = option;
         btn.style.margin = '10px';
         oldRow.parentNode.appendChild(btn);
 
-        // const nw = document.createElement('submit');
-        // btn.className = 'btn btn-primary';
-        // btn.type = 'submit';
-        // btn.textContent = '';
-        // btn.style.margin = '10px';
-        // oldRow.parentNode.appendChild(btn);
-
         btn.addEventListener('click',function(event){
+
             event.preventDefault();
-            console.log('we have clicked');
-            checkBoxSelection(data);
+      //      console.log('we have clicked');
+            if(btn.textContent === 'See Results'){
+                fullArray = checkBoxSelection(data);
+               // console.log(fullArray);
+               fetch('/api/output',{
+                method: 'POST',
+                headers:{
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify(fullArray),
+                })
+                .then((res)=>res.json())
+                .then((data)=>{
+             //   console.log('Success', data);
+                    return data;
+                })
+                .catch((error)=>{
+                    console.error('error POST',error);
+                });
+
+
+            }
+            if(btn.textContent === 'New Quiz'){
+                location.reload();
+            }
+            
             alert('we have submitted answers');
         });
 
@@ -214,52 +234,55 @@ function addButton(parent, data){
     //return btn;
 }
 
-function buttonRow(num, appendTo, data){
+// function buttonRow(num, appendTo, data){
 
-    const oldRow = document.getElementById(`${appendTo}`);
-    const newRow = document.createElement('tr');
-    newRow.id = `row_${num}`;
-    newRow.style.borderCollapse = 'collapse';
-    newRow.style.width = '100%';
-    newRow.style.marginLeft = '20px';
-    newRow.style.border = '2px solid black';
-    newRow.style.background = 'lightred';
+//     const oldRow = document.getElementById(`${appendTo}`);
+//     const newRow = document.createElement('tr');
+//     newRow.id = `row_${num}`;
+//     newRow.style.borderCollapse = 'collapse';
+//     newRow.style.width = '100%';
+//     newRow.style.marginLeft = '20px';
+//     newRow.style.border = '2px solid black';
+//     newRow.style.background = 'lightred';
 
-    const op1 = document.createElement('td');
-       // op1.appendChild(addButton(data));
-        op1.textContent = 'las row 1';
-
-    const op2 = document.createElement('td');
-       // op2.appendChild(addButton(data));
-        op2.textContent = 'last row 2';
-
-    const op3 = document.createElement('td');
-       // op3.appendChild(addButton(data));
-        op3.textContent = 'last row 3';
-
-        // newRow.appendChild(op1);
-        // newRow.appendChild(op2);
-        // newRow.appendChild(op3);
-        // newRow.appendChild(addButton(data, `row_${num}`));
+//     const op1 = document.createElement('td');
+//        op1.id = 'button1';
+//    //    console.log(op1);
+//        addButton(`${op1.id}`, data);
         
-        addButton(`row_${lastRow}`, data);
-        addButton(`row_${lastRow}`, data);
-        addButton(`row_${lastRow}`, data);
-        oldRow.parentNode.appendChild(newRow);
-}
+
+//     const op2 = document.createElement('td');
+//         op2.id = 'button2';
+//         addButton(`button2`, data);
+
+//     const op3 = document.createElement('td');
+//        // op3.appendChild(addButton(data));
+//         op3.textContent = 'last row 3';
+
+//         newRow.appendChild(op1);
+//         newRow.appendChild(op2);
+//         newRow.appendChild(op3);
+//         // newRow.appendChild(addButton(data, `row_${num}`));
+        
+//         // addButton(`row_${lastRow}`, data);
+//         // addButton(`row_${lastRow}`, data);
+//         // addButton(`row_${lastRow}`, data);
+//         oldRow.parentNode.appendChild(newRow);
+// }
 
 
 function checkBoxSelection(data){
 
+   // console.log(data,'quiz data');
     let rowNum = 1;
     let escape = 0
     let dataCount = 0;
-    console.log('we are in function');
-    console.log()
+ //  console.log('we are in function');
+ //   console.log('function data', data);
     while(document.getElementById(`row_${rowNum}`) !== undefined && 
       escape < 50 && document.getElementById(`row_${rowNum}`) !== null){
-        console.log(document.getElementById(`row_${rowNum}`));
-        console.log('we are in first loop');
+     //   console.log(document.getElementById(`row_${rowNum}`));
+     //   console.log('we are in first loop');
         if(rowNum % 2 === 0){
 
             const row = document.getElementById(`row_${rowNum}`);
@@ -276,14 +299,19 @@ function checkBoxSelection(data){
 
                 if(box.checked === true){
                     let answer = question.textContent;
+                    data[dataCount].user_answer = answer;
                     // let correctAnswer = data[rowNum-1].correct_answer;
                     if(answer === data[dataCount].correct_answer){
-                        console.log('your were right')
+                     //   console.log('your were right')
                         row.getElementsByClassName('userAnswer')[0].textContent = 'Correct';
+                        data[dataCount].was_right = true;
+
                     }
                     else{
-                        console.log('you were wrong');
+
+                      //  console.log('you were wrong');
                         row.getElementsByClassName('userAnswer')[0].textContent = 'Wrong';
+                        data[dataCount].was_right = false;
                     }
                     
                     dataCount++;
@@ -300,6 +328,8 @@ function checkBoxSelection(data){
         rowNum++;
         escape++;
     }
+
+    return data;
 
 }
 

@@ -1,1 +1,58 @@
-[{"type":"multiple","difficulty":"medium","category":"Geography","question":"Which English county will you find the University of East Anglia?","correct_answer":"Norfolk","incorrect_answers":["Suffolk","Essex","Cambridgeshire"],"user_answer":"","was_right":false},{"type":"multiple","difficulty":"medium","category":"Geography","question":"What island in the Canary Islands was the scene of one of the worst air disasters in history with the collision of two jumbo jets?","correct_answer":"Tenerife","incorrect_answers":["Fuerteventura","Gran Canaria","Maui"],"user_answer":"","was_right":false},{"type":"multiple","difficulty":"medium","category":"Geography","question":"How many rivers are in Saudi Arabia?","correct_answer":"0","incorrect_answers":["1","2","3"],"user_answer":"","was_right":false},{"type":"multiple","difficulty":"medium","category":"Geography","question":"Montreal is in which Canadian province?","correct_answer":"Quebec","incorrect_answers":["Ontario","Nova Scotia","Alberta"],"user_answer":"","was_right":false},{"type":"multiple","difficulty":"medium","category":"Geography","question":"Which country claims ownership of the disputed state Kosovo?","correct_answer":"Serbia","incorrect_answers":["Croatia","Albania","Macedonia"],"user_answer":"","was_right":false}]
+[
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Politics",
+        "question": "Before 2011, &quot;True Capitalist Radio&quot; was known by a different name. What was that name?",
+        "correct_answer": "True Conservative Radio",
+        "incorrect_answers": [
+            "True Republican Radio",
+            "Texan Capitalist Radio",
+            "United Capitalists"
+        ],
+        "user_answer": "United Capitalists",
+        "was_right": false
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Politics",
+        "question": "Between 1973 to 1990, what country was ruled by dictator Augusto Pinochet?",
+        "correct_answer": "Chile",
+        "incorrect_answers": [
+            "Ethiopia",
+            "Indonesia",
+            "Nicaragua"
+        ],
+        "user_answer": "Chile",
+        "was_right": true
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Politics",
+        "question": "Who was the only president to not be in office in Washington D.C?",
+        "correct_answer": "George Washington",
+        "incorrect_answers": [
+            "Abraham Lincoln",
+            "Richard Nixon",
+            "Thomas Jefferson"
+        ],
+        "user_answer": "George Washington",
+        "was_right": true
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Politics",
+        "question": "Due to the Nagoya Resolution, China agreed to allow Taiwan to compete separately in international sporting events under what name?",
+        "correct_answer": "Chinese Taipei",
+        "incorrect_answers": [
+            "Chinese Taiwan",
+            "Republic of Taiwan",
+            "Republic of Taipei "
+        ],
+        "user_answer": "Chinese Taipei",
+        "was_right": true
+    }
+]

@@ -50,18 +50,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 createRow(dataArray[i], num, `row_${count}`, true);
             }
                 lastRow = dataArray.length;
-                // let num = lastRow + 1;
-               // buttonRow( num, `row_${lastRow}`,data);
-                addButton(`row_${lastRow}`, data);
-                addButton(`row_${lastRow}`, data);
-                addButton(`row_${lastRow}`, data);
+            //     let num = lastRow + 1;
+            //    buttonRow( num, `row_${lastRow}`,data);
+                addButton(`row_${lastRow}`, data, 'See Results');
+                addButton(`row_${lastRow}`, data, 'New Quiz');
+                addButton(`row_${lastRow}`, data, 'Save Quiz');
+                
         
             
             //console.log(message);
            // console.log(data);
            // alert('Form submitted! Check the console for details.');
            // createQuiz(data);
-           console.log((data));
+          // console.log((data));
         })
         .catch((err)=>{
             console.error("error at end",err);
