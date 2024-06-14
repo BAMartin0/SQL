@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #ddd;
+            margin: 20px auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Quiz Results</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Correct Answer</th>
+                <th>Your Answer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each Quiz}}
+            <tr>
+                <td>{{question}}</td>
+                <td>{{correct_answer}}</td>
+                <td>{{answer}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+
+</html>
