@@ -1,46 +1,6 @@
 
 
-function createTable(data){
-
-    
-    const table = document.createElement(`table`);
-    table.id = 'headerTable'
-    table.style.marginTop = '50px';
-    table.style.borderCollapse = 'collapse';
-    table.style.width = '100%';
-
-    const headerRow = document.createElement('tr');
-
-    const headers = ['question'];
-    if(data[0].type === 'multiple'){
-        headers.push('option 1');
-        headers.push('option 2');
-        headers.push('option 3');
-        headers.push('option 4');
-    }else{
-        headers.push('true');
-        headers.push('false');
-    }
-    headers.forEach(headerText =>{
-        const header = document.createElement('th');
-        header.style.border = '1px solid black';
-        header.style.padding = '10px';
-        header.backgroundColor = 'orange';
-        header.textContent = headerText;
-        headerRow.appendChild(header);
-    });
-
-
-
-    table.appendChild(headerRow);
-
-    const firstTable = document.getElementById('createQuizTable');
-
-    firstTable.appendChild(table);
-
-}
-
-function questionRow(data, num, appendTo){
+function questionRow(data, num, appendTo, isAnswer){
 
     const oldRow = document.getElementById(`${appendTo}`);
     const newRow = document.createElement('tr');
@@ -52,47 +12,42 @@ function questionRow(data, num, appendTo){
     newRow.style.background = 'lightblue';
 
     const Qcell = document.createElement('td');
-    Qcell.textContent = data[0];
-    // Qcell.style.border = '1px solid black';
-    // Qcell.style.padding = '10px';
-    // Qcell.style.width = setWidth(40, newRow.id);
-   // Qcell.style.marginLeft = '50px';
-    
-
+    Qcell.textContent =  data[0];
+    let mixedArray = mixUp([1,2,3,4]);
+    mixedArray = mixUp(mixedArray);
+    console.log(mixedArray,' mixed array');
     const op1 = document.createElement('td');
-        op1.textContent = data[1];
-        // op1.style.border = '1px solid black';
-        // op1.style.padding = '10px';
-        // op1.style.width = setWidth(15, newRow.id);
+        op1.textContent = data[mixedArray[0]];
+        op1.className = 'question';
 
     const op2 = document.createElement('td');
-        op2.textContent = data[2];
-        // op2.style.border = '1px solid black';
-        // op2.style.padding = '10px';
-        // op2.style.width = setWidth(15, newRow.id);
+        op2.textContent = data[mixedArray[1]];
+        op2.className = 'question';
 
     const op3 = document.createElement('td');
-        op3.textContent = data[3];
-        // op3.style.border = '1px solid black';
-        // op3.style.padding = '10px';
-        // op3.style.width = setWidth(15, newRow.id);
+        op3.textContent = data[mixedArray[2]];
+        op3.className = 'question';
 
     const op4 = document.createElement('td');
-        op4.textContent = data[4];
-        // op4.style.border = '1px solid black';
-        // op4.style.padding = '10px';
-        // op4.style.width = setWidth(15, newRow.id);
+        op4.textContent = data[mixedArray[3]];
+        op4.className = 'question';
 
+    const answerRow = document.createElement('td');
+        answerRow.textContent = '';
+            
         newRow.appendChild(Qcell);
         newRow.appendChild(op1);
         newRow.appendChild(op2);
         newRow.appendChild(op3);
         newRow.appendChild(op4);
+        newRow.appendChild(answerRow);
+
+
 
         oldRow.parentNode.appendChild(newRow);
 }
 
-function answerRow(data, num, appendTo){
+function answerRow(data, num, appendTo, isAnswer){
 
     const oldRow = document.getElementById(`${appendTo}`);
     const newRow = document.createElement('tr');
@@ -104,47 +59,50 @@ function answerRow(data, num, appendTo){
     newRow.style.background = 'lightorange';
 
     const Qcell = document.createElement('td');
-    // Qcell.style.border = '1px solid black';
-    // Qcell.style.padding = '10px';
-    // Qcell.style.width = setWidth(40, newRow.id);
+
     Qcell.textContent = data[0];
     
 
     const op1 = document.createElement('td');
-        // op1.style.border = '1px solid black';
-        // op1.style.padding = '10px';
-        // op1.style.width = setWidth(15, newRow.id);
-        op1.appendChild(createCheckBox());
+        const op1Box = document.createElement('input');
+        op1Box.className = 'box';
+        op1Box.type = 'checkbox';
+        op1.appendChild(op1Box);
 
     const op2 = document.createElement('td');
-        // op2.style.border = '1px solid black';
-        // op2.style.padding = '10px';
-        // op2.style.width = setWidth(15, newRow.id);
-        op2.appendChild(createCheckBox());
+        const op2Box = document.createElement('input');
+        op2Box.className = 'box';
+        op2Box.type = 'checkbox';
+        op2.appendChild(op2Box);
 
     const op3 = document.createElement('td');
-        // op3.style.border = '1px solid black';
-        // op3.style.padding = '10px';
-        // op3.style.width = setWidth(15, newRow.id);
-        op3.appendChild(createCheckBox());
+        const op3Box = document.createElement('input');
+        op3Box.className ='box';
+        op3Box.type = 'checkbox';
+        op3.appendChild(op3Box);
 
     const op4 = document.createElement('td');
-        // op4.style.border = '1px solid black';
-        // op4.style.padding = '10px';
-        // op4.style.width = setWidth(15, newRow.id);
-        op4.appendChild(createCheckBox());
+        const op4Box = document.createElement('input');
+        op4Box.className='box';
+        op4Box.type = 'checkbox';
+        op4.appendChild(op4Box);
+
+    const answerRow = document.createElement('td');
+        answerRow.className = 'userAnswer';
+        answerRow.textContent = '';
 
         newRow.appendChild(Qcell);
         newRow.appendChild(op1);
         newRow.appendChild(op2);
         newRow.appendChild(op3);
-        newRow.appendChild(op4);
+        newRow.appendChild(op4);         
+        newRow.appendChild(answerRow);
 
-        oldRow.parentNode.appendChild(newRow);
+        oldRow.parentNode.appendChild(newRow, newRow.id);
 
 }
 
-function firstRow(data, num, appendTo){
+function firstRow(data, num, appendTo, isAnswer){
 
     const oldRow = document.getElementById(`${appendTo}`);
     const newRow = document.createElement('tr');
@@ -157,70 +115,39 @@ function firstRow(data, num, appendTo){
 
     const Qcell = document.createElement('td');
     Qcell.textContent = 'Question';
-    // Qcell.style.border = '1px solid black';
-    // Qcell.style.padding = '10px';
-    // Qcell.style.width = setWidth(40, newRow.id);
-    
 
     const op1 = document.createElement('td');
         op1.textContent = 'Option 1';
-        // op1.style.border = '1px solid black';
-        // op1.style.padding = '10px';
-        // op1.style.width = setWidth(15, newRow.id);
 
     const op2 = document.createElement('td');
         op2.textContent = 'Option 2';
-        // op2.style.border = '1px solid black';
-        // op2.style.padding = '10px';
-        // op2.style.width = setWidth(15, newRow.id);
 
     const op3 = document.createElement('td');
         op3.textContent = 'Option 3';
-        // op3.style.border = '1px solid black';
-        // op3.style.padding = '10px';
-        // op3.style.width = setWidth(15, newRow.id);
 
     const op4 = document.createElement('td');
         op4.textContent = 'Option 4';
-        // op4.style.border = '1px solid black';
-        // op4.style.padding = '10px';
-        // op4.style.width = setWidth(15, newRow.id);
+
+    const answerRow = document.createElement('td');
+        answerRow.textContent = 'User Answer';
 
         newRow.appendChild(Qcell);
         newRow.appendChild(op1);
         newRow.appendChild(op2);
         newRow.appendChild(op3);
         newRow.appendChild(op4);
+        newRow.appendChild(answerRow);
 
         oldRow.parentNode.appendChild(newRow);
 }
 
-function setStyle(cellToStyle){
-    cellToStyle.border = '1px solid black';
-    cellToStyle.padding = '10px';
-    cellToStyle.width = setWidth(20);
-}
-
-function setWidth(percentWidth, row){
-
-    
-    const newRows = document.getElementById(row);
-    if(newRows !== null){
-        console.log(row);
-        const rowWidth = newRows.offsetWidth;
-        return (percentWidth/100)*rowWidth +'px';
-    }
-
-
-}
-
-function createRow(data, num, appendTo){
+function createRow(data, num, appendTo, isAnswer){
 
     if(num % 2 !== 0){
-        questionRow(data, num, appendTo);
+        questionRow(data, num, appendTo, isAnswer);
     }
     else{
-        answerRow(data, num, appendTo);
+        answerRow(data, num, appendTo, isAnswer);
     }
 
 }
@@ -247,23 +174,144 @@ function createQuiz(data, numQuestions){
     return quiz;
 }
 
-function createCheckBox (){
+// function createCheckBox (){
 
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
+//     const checkbox = document.createElement('input');
+//     checkbox.type = 'checkbox';
+//     checkbox.checked = item.active;
 
-    return checkbox;
+//     return checkbox;
+
+// }
+
+function addButton(parent, data){
+
+        // console.log(data);
+        const oldRow = document.getElementById(`${parent}`);
+        const btn = document.createElement('submit');
+        btn.className = 'btn btn-primary';
+        btn.type = 'submit';
+        btn.textContent = 'Submit';
+        btn.style.margin = '10px';
+        oldRow.parentNode.appendChild(btn);
+
+        // const nw = document.createElement('submit');
+        // btn.className = 'btn btn-primary';
+        // btn.type = 'submit';
+        // btn.textContent = '';
+        // btn.style.margin = '10px';
+        // oldRow.parentNode.appendChild(btn);
+
+        btn.addEventListener('click',function(event){
+            event.preventDefault();
+            console.log('we have clicked');
+            checkBoxSelection(data);
+            alert('we have submitted answers');
+        });
+
+
+
+    //return btn;
+}
+
+function buttonRow(num, appendTo, data){
+
+    const oldRow = document.getElementById(`${appendTo}`);
+    const newRow = document.createElement('tr');
+    newRow.id = `row_${num}`;
+    newRow.style.borderCollapse = 'collapse';
+    newRow.style.width = '100%';
+    newRow.style.marginLeft = '20px';
+    newRow.style.border = '2px solid black';
+    newRow.style.background = 'lightred';
+
+    const op1 = document.createElement('td');
+       // op1.appendChild(addButton(data));
+        op1.textContent = 'las row 1';
+
+    const op2 = document.createElement('td');
+       // op2.appendChild(addButton(data));
+        op2.textContent = 'last row 2';
+
+    const op3 = document.createElement('td');
+       // op3.appendChild(addButton(data));
+        op3.textContent = 'last row 3';
+
+        // newRow.appendChild(op1);
+        // newRow.appendChild(op2);
+        // newRow.appendChild(op3);
+        // newRow.appendChild(addButton(data, `row_${num}`));
+        
+        addButton(`row_${lastRow}`, data);
+        addButton(`row_${lastRow}`, data);
+        addButton(`row_${lastRow}`, data);
+        oldRow.parentNode.appendChild(newRow);
+}
+
+
+function checkBoxSelection(data){
+
+    let rowNum = 1;
+    let escape = 0
+    let dataCount = 0;
+    console.log('we are in function');
+    console.log()
+    while(document.getElementById(`row_${rowNum}`) !== undefined && 
+      escape < 50 && document.getElementById(`row_${rowNum}`) !== null){
+        console.log(document.getElementById(`row_${rowNum}`));
+        console.log('we are in first loop');
+        if(rowNum % 2 === 0){
+
+            const row = document.getElementById(`row_${rowNum}`);
+            const questions = document.getElementById(`row_${rowNum-1}`)
+
+            let cellNum = 0;
+
+            while(cellNum < 4){
+
+                if(row !== null){
+
+                   const box = row.getElementsByClassName('box')[cellNum];
+                   const question = questions.getElementsByClassName('question')[cellNum];
+
+                if(box.checked === true){
+                    let answer = question.textContent;
+                    // let correctAnswer = data[rowNum-1].correct_answer;
+                    if(answer === data[dataCount].correct_answer){
+                        console.log('your were right')
+                        row.getElementsByClassName('userAnswer')[0].textContent = 'Correct';
+                    }
+                    else{
+                        console.log('you were wrong');
+                        row.getElementsByClassName('userAnswer')[0].textContent = 'Wrong';
+                    }
+                    
+                    dataCount++;
+                }
+                   
+            }
+                // if(row.getElementsByTagName('td')[cellNum].checked){
+                //     console.log(`${cellNum} was checked`);
+                // }
+                cellNum++;
+            }
+
+        }        
+        rowNum++;
+        escape++;
+    }
 
 }
 
-function addButton(parent){
+function mixUp(array){
+    const answers = array;
 
-    const oldRow = document.getElementById(`${parent}`);
-    const btn = document.createElement('submit');
-    btn.className = 'btn btn-primary';
-    btn.type = 'submit';
+    for(let i = answers.length - 1; i > 0; i--){
 
-    oldRow.parentNode.appendChild(btn);
+        const j = Math.floor(Math.random()*(i+1));
 
-    //return btn;
+        [answers[i],answers[j]] = [answers[j], answers[i]];
+
+        return answers;
+    }
 }
