@@ -5,7 +5,7 @@ const {callAPI, createQuiz, getQuizURL} = require('./quizAPI');
 router.post('/input',(req,res)=>{
 
     console.log('we made it this far');
-    console.log(req.body);
+  //  console.log(req.body);
     const apiURL = getQuizURL(req.body);
 
     callAPI(apiURL)
@@ -13,7 +13,8 @@ router.post('/input',(req,res)=>{
 
         let quiz = createQuiz(data);
         
-        console.log(quiz);
+     //   console.log(quiz);
+        //res.json(quiz);
        res.send(quiz);
 
         // const filePath = path.join(__dirname,'quiz.html');
@@ -24,7 +25,4 @@ router.post('/input',(req,res)=>{
     });
 });
 
-router.get('/input',(req,res)=>{
-    res.sendFile(path.join(__dirname,'/public/quiz.html'));
-});
 module.exports = router;

@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
        // console.log(entries);
         //console.log(entries);
         const input = fixForm(entries);
-        console.log(input);
+      //  console.log(input);
 
 
         //getInput(input)
@@ -42,11 +42,19 @@ document.addEventListener('DOMContentLoaded', function() {
         .then((data)=>{
             
             createTable(data);
+            const dataArray = createQuiz(data);
+            createRow(dataArray[0], 0, 'headerTable');
+            for(let i = 1; i < dataArray.length; i++){
+                const count = i-1;
+                createRow(dataArray[i], i, `row_${count}`);
+            }
+        
+            
             //console.log(message);
            // console.log(data);
            // alert('Form submitted! Check the console for details.');
            // createQuiz(data);
-           console.log(createQuiz(data));
+           console.log((data));
         })
         .catch((err)=>{
             console.error("error at end",err);
