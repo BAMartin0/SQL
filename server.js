@@ -1,6 +1,6 @@
 // ? Dependencies
 const express = require('express');
-// ? Import express-handlebars
+const path = require('path');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 const path = require('path');
@@ -10,12 +10,16 @@ const sequelize = require("./config/connection");
 
 // ? Sets up the Express App
 const app = express();
-const PORT = process.env.PORT || 3001;
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
-// ? Describe what the following two lines of code are doing.
-// ? The following two lines of code are setting Handlebars.js as the default template engine.
+app.use('/api',api);
+
+//const PORT = process.env.PORT || 3001;
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./controllers/quiz-routes'));
 app.set("views", path.join(__dirname, "views"));
@@ -25,3 +29,5 @@ app.set("views", path.join(__dirname, "views"));
 app.listen(PORT, () => {
   console.log('Server listening on: http://localhost:' + PORT);
 });
+
+//my repo 6/14/2024 16:15
