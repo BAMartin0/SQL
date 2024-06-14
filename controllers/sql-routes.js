@@ -1,11 +1,16 @@
-const router = require('express').Router();
-const path = require('path');
+// ? Is this a Model, a View, or a Controller? 
+// ? This file is a Controller. 
+// ? What is it responsible for handling?
+// ? It routes commands to the Model and View parts.
 
-// This is the 'get' route
+const router = require('express').Router();
+
+// ? Add a comment describing the purpose of the 'get' route
+// ? GET route for getting all of the dishes that are on the menu
 router.get('/', async (req, res) => {
-  // Here, index.html is rendered
-  res.sendFile(path.join(__dirname, '../views/index.html'));
+  // ? Add a comment describing the purpose of the render method
+  // ? This method is rendering the 'all' Handlebars.js template. This is how we connect each route to the correct template.
+  res.render('quiz');
 });
 
 module.exports = router;
-
