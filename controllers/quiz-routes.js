@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 
 // Path to quiz data JSON file
-const quizDataPath = path.join(__dirname, "quiz.json");
+const quizDataPath = path.join(__dirname, "../seeds/quiz.json");
 
 // Read quiz data from JSON file
 fs.readFile(quizDataPath, "utf8", (err, data) => {
