@@ -14,13 +14,13 @@ router.get('/home', async(req, res)=>{
     res.render('login');
 })
 
-router.get('/quiz_mc', async(req, res)=>{
-    res.render('quiz_mc');
-})
+// router.get('/quiz_mc', async(req, res)=>{
+//     res.render('quiz_mc');
+// })
 
-router.get('/createQuiz', async(req, res)=>{
-    res.render('createQuiz');
-})
+// router.get('/createQuiz', async(req, res)=>{
+//     res.render('createQuiz');
+// })
 
 router.get('/score', async(req, res)=>{
     res.render('score');
