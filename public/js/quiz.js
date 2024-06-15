@@ -59,7 +59,7 @@ function answerRow(data, num, appendTo, isAnswer){
     newRow.style.border = '2px solid black';
    // newRow.style.width = '100%';
     //newRow.style.height = '80px';
-    newRow.style.background = 'lightorange';
+    newRow.style.background = 'white';
     newRow.style.justifyContent = 'center';
 
     const Qcell = document.createElement('td');
@@ -115,7 +115,7 @@ function firstRow(data, num, appendTo, isAnswer){
    // newRow.style.width = '100%';
     // newRow.style.marginLeft = '20px';
     newRow.style.border = '2px solid black';
-    newRow.style.background = 'lightred';
+    newRow.style.background = 'lightgrey';
     newRow.style.height = '80px';
     newRow.style.justifyContent = 'center';
 
