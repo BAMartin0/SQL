@@ -1,1 +1,142 @@
-[{"type":"multiple","difficulty":"medium","category":"Sports","question":"Which of the following Grand Slam tennis tournaments occurs LAST?","correct_answer":"US Open","incorrect_answers":["French Open","Wimbledon","Australian Open"],"answer":"","is_correct":false},{"type":"multiple","difficulty":"medium","category":"Sports","question":"What is the nickname of Northampton town&#039;s rugby union club?","correct_answer":"Saints","incorrect_answers":["Harlequins","Saracens","Wasps"],"answer":"","is_correct":false},{"type":"multiple","difficulty":"medium","category":"Sports","question":"Who was the British professional wrestler Shirley Crabtree better known as?","correct_answer":"Big Daddy","incorrect_answers":["Giant Haystacks","Kendo Nagasaki","Masambula"],"answer":"","is_correct":false},{"type":"multiple","difficulty":"medium","category":"Sports","question":"Which country did Kabaddi, a contact sport involving tackling, originate from?","correct_answer":"India","incorrect_answers":["Australia","Turkey","Cambodia"],"answer":"","is_correct":false},{"type":"multiple","difficulty":"medium","category":"Sports","question":"Who was the top scorer of the 2014 FIFA World Cup?","correct_answer":"James Rodr&iacute;guez","incorrect_answers":["Thomas M&uuml;ller","Lionel Messi","Neymar"],"answer":"","is_correct":false},{"type":"multiple","difficulty":"medium","category":"Sports","question":"Which of these teams isn&#039;t a member of the NHL&#039;s &quot;Original Six&quot; era?","correct_answer":"Philadelphia Flyers","incorrect_answers":["New York Rangers","Toronto Maple Leafs","Boston Bruins"],"answer":"","is_correct":false}]
+[
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "What is Tiger Woods&#039; all-time best career golf-score?",
+        "correct_answer": "61",
+        "incorrect_answers": [
+            "65",
+            "63",
+            "67"
+        ],
+        "answer": "61",
+        "is_correct": true
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "Which basketball team has attended the most NBA grand finals?",
+        "correct_answer": "Los Angeles Lakers",
+        "incorrect_answers": [
+            "Boston Celtics",
+            "Philadelphia 76ers",
+            "Golden State Warriors"
+        ],
+        "answer": "Los Angeles Lakers",
+        "is_correct": true
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "What country hosted the 2014 Winter Olympics?",
+        "correct_answer": "Russia",
+        "incorrect_answers": [
+            "Canada",
+            "United States",
+            "Germany"
+        ],
+        "answer": "Russia",
+        "is_correct": true
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "Who was the top scorer of the 2014 FIFA World Cup?",
+        "correct_answer": "James Rodr&iacute;guez",
+        "incorrect_answers": [
+            "Thomas M&uuml;ller",
+            "Lionel Messi",
+            "Neymar"
+        ],
+        "answer": "James Rodr&iacute;guez",
+        "is_correct": true
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "In a game of snooker, what colour ball is worth 3 points?",
+        "correct_answer": "Green",
+        "incorrect_answers": [
+            "Yellow",
+            "Brown",
+            "Blue"
+        ],
+        "answer": "Green",
+        "is_correct": true
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "Why was The Green Monster at Fenway Park was originally built?",
+        "correct_answer": "To prevent viewing games from outside the park.",
+        "incorrect_answers": [
+            "To make getting home runs harder.",
+            "To display advertisements.",
+            "To provide extra seating."
+        ],
+        "answer": "To provide extra seating.",
+        "is_correct": false
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "Which nation hosted the FIFA World Cup in 2006?",
+        "correct_answer": "Germany",
+        "incorrect_answers": [
+            "United Kingdom",
+            "Brazil",
+            "South Africa"
+        ],
+        "answer": "Germany",
+        "is_correct": true
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "Which of these countries&#039; national teams qualified for the 2018 FIFA World Cup in Russia?",
+        "correct_answer": "Tunisia",
+        "incorrect_answers": [
+            "United States of America",
+            "Italy",
+            "Netherlands"
+        ],
+        "answer": "Tunisia",
+        "is_correct": true
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "What cricketing term denotes a batsman being dismissed with a score of zero?",
+        "correct_answer": "Duck",
+        "incorrect_answers": [
+            "Bye",
+            "Beamer",
+            "Carry"
+        ],
+        "answer": "Duck",
+        "is_correct": true
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Sports",
+        "question": "Which NBA player has the most games played over the course of their career?",
+        "correct_answer": "Robert Parish",
+        "incorrect_answers": [
+            "Kareem Abdul-Jabbar",
+            "Kevin Garnett",
+            "Kobe Bryant"
+        ],
+        "answer": "Robert Parish",
+        "is_correct": true
+    }
+]

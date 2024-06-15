@@ -3,7 +3,7 @@ const router = require('express').Router();
 const {callAPI, createQuiz, getQuizURL, saveQuiz} = require('./quizAPI.js');
 
 router.get('/', async(req, res)=>{
-    res.render('quiz');
+    res.render('login');
 })
 
 router.get('/quiz', async(req, res)=>{
