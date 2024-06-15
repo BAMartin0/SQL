@@ -38,12 +38,12 @@ app.set("views", path.join(__dirname, "views"));
 
 // ? Starts the server to begin listening
 
-app.listen(PORT, () => {
-  console.log('Server listening on: http://localhost:' + PORT);
-});
-
-// sequelize.sync({ force: false }).then(() => {
-//   app.listen(PORT, () => console.log('Now listening'));
+// app.listen(PORT, () => {
+//   console.log('Server listening on: http://localhost:' + PORT);
 // });
+
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
+});
 
 //my repo 6/14/2024 16:15

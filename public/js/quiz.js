@@ -240,42 +240,6 @@ function addButton(parent, data, option){
     //return btn;
 }
 
-// function buttonRow(num, appendTo, data){
-
-//     const oldRow = document.getElementById(`${appendTo}`);
-//     const newRow = document.createElement('tr');
-//     newRow.id = `row_${num}`;
-//     newRow.style.borderCollapse = 'collapse';
-//     newRow.style.width = '100%';
-//     newRow.style.marginLeft = '20px';
-//     newRow.style.border = '2px solid black';
-//     newRow.style.background = 'lightred';
-
-//     const op1 = document.createElement('td');
-//        op1.id = 'button1';
-//    //    console.log(op1);
-//        addButton(`${op1.id}`, data);
-        
-
-//     const op2 = document.createElement('td');
-//         op2.id = 'button2';
-//         addButton(`button2`, data);
-
-//     const op3 = document.createElement('td');
-//        // op3.appendChild(addButton(data));
-//         op3.textContent = 'last row 3';
-
-//         newRow.appendChild(op1);
-//         newRow.appendChild(op2);
-//         newRow.appendChild(op3);
-//         // newRow.appendChild(addButton(data, `row_${num}`));
-        
-//         // addButton(`row_${lastRow}`, data);
-//         // addButton(`row_${lastRow}`, data);
-//         // addButton(`row_${lastRow}`, data);
-//         oldRow.parentNode.appendChild(newRow);
-// }
-
 
 function checkBoxSelection(data){
 
@@ -305,19 +269,19 @@ function checkBoxSelection(data){
 
                 if(box.checked === true){
                     let answer = question.textContent;
-                    data[dataCount].user_answer = answer;
+                    data[dataCount].answer = answer;
                     // let correctAnswer = data[rowNum-1].correct_answer;
                     if(answer === data[dataCount].correct_answer){
                      //   console.log('your were right')
                         row.getElementsByClassName('userAnswer')[0].textContent = 'Correct';
-                        data[dataCount].was_correct = true;
+                        data[dataCount].is_correct = true;
 
                     }
                     else{
 
                       //  console.log('you were wrong');
                         row.getElementsByClassName('userAnswer')[0].textContent = 'Wrong';
-                        data[dataCount].was_correct = false;
+                        data[dataCount].is_correct = false;
                     }
                     
                     dataCount++;
