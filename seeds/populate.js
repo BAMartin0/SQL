@@ -1,7 +1,8 @@
-// const fs = require("fs");
-// const path = require("path");
+const fs = require("fs");
+const path = require("path");
 const sequelize = require("../config/connection");
 const { DataTypes } = require("sequelize");
+
 
 // Define the Quiz model
 const Quiz = sequelize.define("Quiz", {
@@ -42,17 +43,20 @@ const Quiz = sequelize.define("Quiz", {
 });
 
 const populateTable = async () => {
+  console.log('start populating table');
   try {
     await sequelize.authenticate();
+    
     await sequelize.sync({ force: true }); // This will drop the table if it already exists and create a new one
-
+    
     const data = JSON.parse(
       fs.readFileSync(path.join(__dirname, "quiz.json"), "utf8")
     );
+    console.log('table was read');
 
     await Quiz.bulkCreate(data);
 
-    console.log("Data successfully loaded!");
+    console.log('we got loaded!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!?????????????????????????????????@@@@@@@@@@@@@@');
   } catch (error) {
     console.error("Error loading data:", error);
   } finally {
@@ -60,4 +64,7 @@ const populateTable = async () => {
   }
 };
 
-populateTable();
+//populateTable();
+
+
+module.exports = {populateTable};

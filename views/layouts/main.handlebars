@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <h1>Snazzy Quiz Lounge</h1>
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SQL</title>
-    <link rel='stylesheet' href='/css/jass.css' />
+    {{!-- <link rel='stylesheet' href='/css/jass.css' /> --}}
     <link rel='stylesheet' href='/css/style.css' />
   </head>
+  <header id="snazzyHeader">
+    <h1 id="snazzyHeader">Snazzy Quiz Lounge</h1>
+  </header>
   <body>
-    <div class="topnav">
-      <a href="#home">Home</a>
-      <a href="#quiz">Quiz</a>
-      <a href="#score">Results</a>
+    <div id="content">
+    <div class="topnav" id="quizTopNav">
+      <a href="home" id="home">Home</a>
+      <a href="quiz" id="quiz">Quiz</a>
+      <a href="score" id = "score">Results</a>
     </div> 
     {{{body}}}
-
-     {{!-- <script src="../../quiz_routes/index.js"></script> --}}
+  </div>
+  <footer>
+    
+  </footer>
+     <script src="/js/script.js"></script>
   </body>
 </html>

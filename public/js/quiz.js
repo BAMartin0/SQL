@@ -6,10 +6,12 @@ function questionRow(data, num, appendTo, isAnswer){
     const newRow = document.createElement('tr');
     newRow.id = `row_${num}`;
     newRow.style.borderCollapse = 'collapse';
-    newRow.style.width = '100%';
-    newRow.style.marginLeft = '20px';
+  //  newRow.style.width = '100%';
+    //newRow.style.height = '200px';
+    // newRow.style.marginLeft = '20px';
     newRow.style.border = '2px solid black';
     newRow.style.background = 'lightblue';
+    
 
     const Qcell = document.createElement('td');
     Qcell.textContent =  data[0];
@@ -53,10 +55,12 @@ function answerRow(data, num, appendTo, isAnswer){
     const newRow = document.createElement('tr');
     newRow.id = `row_${num}`;
     newRow.style.borderCollapse = 'collapse';
-    newRow.style.marginLeft = '20px';
+    // newRow.style.marginLeft = '20px';
     newRow.style.border = '2px solid black';
-    newRow.style.width = '100%';
+   // newRow.style.width = '100%';
+    //newRow.style.height = '80px';
     newRow.style.background = 'lightorange';
+    newRow.style.justifyContent = 'center';
 
     const Qcell = document.createElement('td');
 
@@ -108,10 +112,12 @@ function firstRow(data, num, appendTo, isAnswer){
     const newRow = document.createElement('tr');
     newRow.id = `row_${num}`;
     newRow.style.borderCollapse = 'collapse';
-    newRow.style.width = '100%';
-    newRow.style.marginLeft = '20px';
+   // newRow.style.width = '100%';
+    // newRow.style.marginLeft = '20px';
     newRow.style.border = '2px solid black';
     newRow.style.background = 'lightred';
+    newRow.style.height = '80px';
+    newRow.style.justifyContent = 'center';
 
     const Qcell = document.createElement('td');
     Qcell.textContent = 'Question';
