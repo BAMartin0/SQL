@@ -49,3 +49,5 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 //my repo 6/14/2024 16:15
+
+//my updated repo named new-branch-main 6/16/2024 15:51
