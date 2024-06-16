@@ -9,7 +9,7 @@ const hbs = exphbs.create({});
 // const api = require('./quiz_routes/index.js');
 // const page = require('./quiz_routes/index.js')
 
-const Quiz = require("./models/Quiz.js");
+const Quiz = require("./models/quiz.js");
 const sequelize = require("./config/connection");
 const routes = require('./controllers/index.js');
 // ? Sets up the Express App
@@ -49,3 +49,5 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 //my repo 6/14/2024 16:15
+
+//my updated repo named new-branch-main 6/16/2024 15:51
