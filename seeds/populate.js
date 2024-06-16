@@ -47,12 +47,12 @@ const populateTable = async () => {
   try {
     await sequelize.authenticate();
     
-    await sequelize.sync({ force: true }); // This will drop the table if it already exists and create a new one
+    await sequelize.sync({ force: false }); // This will drop the table if it already exists and create a new one
     
     const data = JSON.parse(
       fs.readFileSync(path.join(__dirname, "quiz.json"), "utf8")
     );
-    console.log('table was read');
+    console.log('this is the data @@@@@@@@@@@@@@@@@@@@@@@@',data);
 
     await Quiz.bulkCreate(data);
 

@@ -1,8 +1,3 @@
-//post user data to the node server,js
-//const express = require('express');
-// const router = require('express').Router();
-// const path = require('path');
-// const createTable = require('./quiz.js');
 
 const getInput = (input) =>
 

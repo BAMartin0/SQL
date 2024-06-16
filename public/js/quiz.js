@@ -180,16 +180,6 @@ function createQuiz(data, numQuestions){
     return quiz;
 }
 
-// function createCheckBox (){
-
-//     const checkbox = document.createElement('input');
-//     checkbox.type = 'checkbox';
-//     checkbox.checked = item.active;
-
-//     return checkbox;
-
-// }
-
 function addButton(parent, data, option){
 
         // console.log(data);
@@ -239,7 +229,6 @@ function addButton(parent, data, option){
 
     //return btn;
 }
-
 
 function checkBoxSelection(data){
 

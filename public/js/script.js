@@ -30,8 +30,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     createAccount.addEventListener('click', function(event) {
         event.preventDefault();
-        loadUser(password, email, username);
-        window.location.href = '/quiz';
+        const newUserName = loadUser(password, email, username);
+
+        getUser(newUserName)
+        .then((data)=>{
+            window.location.href = '/quiz';
+         })
+         .catch((err)=>{
+             console.error("error at end",err);
+         });
     });
 });
 
@@ -46,10 +53,11 @@ function loadUser(password, email, username){
     return user1;
 }
 
+if(sessionStorage.getItem('user123') !== null && sessionStorage.length >= 1){
 const activeUser = JSON.parse(sessionStorage.getItem('user123'));
 const userMessage = document.getElementById('currentUser');
 userMessage.innerHTML = `Hello! ${activeUser.username}`;
-
+}
 const getUser = (input) =>
 
     fetch('/api/user',{
