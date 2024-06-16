@@ -9,7 +9,7 @@ const hbs = exphbs.create({});
 // const api = require('./quiz_routes/index.js');
 // const page = require('./quiz_routes/index.js')
 
-const Quiz = require("./models/Quiz.js");
+const Quiz = require("./models/quiz.js");
 const sequelize = require("./config/connection");
 const routes = require('./controllers/index.js');
 // ? Sets up the Express App
