@@ -17,8 +17,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     signIn.addEventListener('click', async(event) => {
         event.preventDefault();
-        loadUser(password, email, username);
-        window.location.href = '/quiz';
+        const newUserName = loadUser(password, email, username);
+
+        getUser(newUserName)
+        .then((data)=>{
+            window.location.href = '/quiz';
+         })
+         .catch((err)=>{
+             console.error("error at end",err);
+         });
 
     });
     createAccount.addEventListener('click', function(event) {
@@ -35,8 +42,28 @@ function loadUser(password, email, username){
     user1.password = password.value;
     sessionStorage.setItem('user123', JSON.stringify(user1));
     console.log(user1);
+
+    return user1;
 }
 
 const activeUser = JSON.parse(sessionStorage.getItem('user123'));
 const userMessage = document.getElementById('currentUser');
 userMessage.innerHTML = `Hello! ${activeUser.username}`;
+
+const getUser = (input) =>
+
+    fetch('/api/user',{
+        method: 'POST',
+        headers:{
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify(input),
+    })
+    .then((res)=>res.json())
+    .then((data)=>{
+     //   console.log('Success', data);
+        return data;
+    })
+    .catch((error)=>{
+        console.error('error POST',error);
+    });

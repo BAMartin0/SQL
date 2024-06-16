@@ -13,7 +13,8 @@ const {populateTable} = require('../seeds/populate.js')
 
 //class for creating an object that represents one question with all its details (type, difficulty, category...)
 class Question{
-    constructor(type, difficulty, category, question, correct_answer, incorrect_answers, answer, is_correct){
+    constructor(user_id, type, difficulty, category, question, correct_answer, incorrect_answers, answer, is_correct){
+        this.user_id = user_id;
         this.type = type;
         this.difficulty = difficulty;
         this.category = category;
@@ -62,9 +63,12 @@ function saveQuiz(data){
 function createQuiz(data){
     const results = data.results;
     let allQuestions = [];
+    //const activeUser = JSON.parse(sessionStorage.getItem('user123'));
+    //const userMessage = document.getElementById('currentUser');
    // console.log(results);
     for(let i =0; i < results.length; i++){
         allQuestions[i] = new Question();
+       // allQuestions[i].user_id = activeUser.username;
         allQuestions[i].type = results[i].type;
         allQuestions[i].difficulty = results[i].difficulty;
         allQuestions[i].category = results[i].category;

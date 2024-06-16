@@ -56,7 +56,6 @@ const populateTable = async () => {
 
     await Quiz.bulkCreate(data);
 
-    console.log('we got loaded!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!?????????????????????????????????@@@@@@@@@@@@@@');
   } catch (error) {
     console.error("Error loading data:", error);
   } finally {
