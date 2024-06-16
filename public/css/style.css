@@ -1,10 +1,41 @@
 
-
-.topnav {
+header, #snazzyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 80px;
+  padding: 0;
+  margin: 0;
+  
+}
+footer{
+  height: 100px;
+  background-color: lightblue;
+}
+h1, #quizH1, #quizTitle, #snazzyHeader{
+  text-align: center;
+  /* margin: 20px; */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 32px;
+  font-weight: 700;
+}
+.topnav, #quizTopNav, #home, #score, #quiz {
   background-color: #333;
   overflow: hidden;
+  height: 50px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  box-sizing: content-box;
+  font-family: Verdana;
+  font-weight: 400;
+  line-height: 25px;
 }
-
+#home, #score, #quiz{
+  box-sizing: content-box;
+}
 .topnav a {
   float: right;
   color: #f2f2f2;
@@ -13,30 +44,28 @@
   text-decoration: none;
   font-size: 17px;
 }
-
 .topnav a:hover {
   background-color: #ddd;
-  color: black;
+  color: lightskyblue;
 }
-
-
 .topnav a.active {
   background-color: #04AA6D;
-  color: white;
+  color: lightskyblue;
 }
-
 body {
+  margin: 0px;
+  padding: 0;
+  border: 0;
   font-family: Verdana;
   text-align: center;
+  padding-bottom: 50px;
 }
-
 #myButton {
   font-size: 3em;
   padding: 5px 25px;
   border-radius: 5px;
   
 }
-
 .buttons {
   padding: 10px 20px;
   font-size: 1.5em;
@@ -47,32 +76,33 @@ body {
   transition: background-color 0.25s;
   
 }
-
 .buttons:hover {
-  background-color: hsl(214, 100%, 56%);
+  background-color: hsl(214, 100%, 56%) !important;
   
 }
-
-body, html {
-  height: 95%;
+html {
+  height: 100%;
 }
+body{
+  background-image: url('../images/background1.png'); 
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 
+}
 /* The hero image */
 .hero-image {
-/* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-background-image: linear-gradient(rgba(0, 0, 0, 5), rgba(0, 0, 0, 0)), url(assets/Quiz.jpeg);
-
-/* Set a specific height */
-height: 85%;
-
-/* Position and center the image to scale nicely on all screens */
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-position: relative;
+  background-image: url('../images/SQLhero.png'); 
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  filter: blur(5px);
 }
 
-/* Place text in the middle of the image */
 .hero-text {
 text-align: center;
 position: absolute;
@@ -80,4 +110,9 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 color: white;
+}
+
+#content{
+  height:100vh;
+  overflow-y: scroll;
 }

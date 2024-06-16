@@ -1,19 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <h1>Snazzy Quiz Lounge</h1>
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SQL</title>
-    <link rel='stylesheet' href='/css/jass.css' />
+    {{!-- <link rel='stylesheet' href='/css/jass.css' /> --}}
     <link rel='stylesheet' href='/css/style.css' />
+    <style>
+      header{
+        background-color: lightblue;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      header h1{
+        background-color: lightblue;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #currentUser{
+        position: absolute;
+        top: 0 !important;
+        left: 0 !important;
+        margin: 5px !important;
+        font-size: 17px !important;
+        font-family: Verdana !important;
+        font-weight: 600 !important;
+        padding: 0 !important;
+        text-align: center !important;
+        height: 21px !important;
+        line-height: 21px !important;
+        
+      }
+      body{
+        
+      }
+    </style>
   </head>
+  <header id="snazzyHeader">
+    <h1 id="snazzyHeader">Snazzy Quiz Lounge</h1>
+    <h3 id="currentUser"></h3>
+  </header>
   <body>
-    <div class="topnav">
-      <a href="#home">Home</a>
-      <a href="#quiz">Quiz</a>
-      <a href="#score">Scoreboard</a>
+    <div id="content">
+    <div class="topnav" id="quizTopNav">
+      <a href="home" id="home">Home</a>
+      <a href="quiz" id="quiz">Quiz</a>
+      <a href="score" id = "score">Results</a>
     </div> 
     {{{body}}}
+    
+  </div>
+  <footer>
+    
+  </footer>
+     <script src="/js/header.js"></script>
   </body>
 </html>
