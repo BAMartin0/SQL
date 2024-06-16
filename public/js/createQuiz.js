@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then((data)=>{
             
            // createTable(data);
+           console.log(data);
             const dataArray = createQuiz(data);
             firstRow(dataArray[0], 0, 'createQuizTable',true);
             for(let i = 0; i < dataArray.length; i++){

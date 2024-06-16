@@ -4,7 +4,7 @@ const fs = require('fs');
 const {populateTable} = require('../seeds/populate.js')
 
 class Question{
-    constructor(type, difficulty, category, question, correct_answer, incorrect_answers, answer, is_correct){
+    constructor(type, difficulty, category, question, correct_answer, incorrect_answers, answer, is_correct, user_name){
         this.type = type;
         this.difficulty = difficulty;
         this.category = category;
@@ -13,6 +13,7 @@ class Question{
         this.incorrect_answers = incorrect_answers;
         this.answer = answer;
         this.is_correct = is_correct;
+        this.user_name = user_name;
     }
 }
 
@@ -54,6 +55,7 @@ function createQuiz(data){
     const results = data.results;
     let allQuestions = [];
 
+
     for(let i =0; i < results.length; i++){
         allQuestions[i] = new Question();
         allQuestions[i].type = results[i].type;
@@ -64,10 +66,13 @@ function createQuiz(data){
         allQuestions[i].incorrect_answers = results[i].incorrect_answers;
         allQuestions[i].answer = '';
         allQuestions[i].is_correct = false;
+        allQuestions[i].user_name = 'tommy';
     }
     //saveQuiz(allQuestions);
-
+    console.log(allQuestions);
     return allQuestions;
+
+
 }
 
 //takes in details that user enters into table to set up a url for the api call
@@ -79,6 +84,22 @@ function getQuizURL(quizDetails){
 
     return url;
 
+}
+
+async function getUserName(){
+
+    const root = path.join(__dirname,'..');
+    const findFolder = path.join(root,'seeds');
+    try{
+        const data = await  fs.readFileSync(path.join(findFolder, "users.json"), "utf8");
+
+        const users = await JSON.parse(data);
+        console.log('444444444444444444$$$$$$$$$$$$$$$$$$$$$$$$$$',users.username);
+        return users.username;
+    }
+    catch(error){
+        return '';
+    }
 }
 
 module.exports = {callAPI, createQuiz, getQuizURL, saveQuiz};

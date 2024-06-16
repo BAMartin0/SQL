@@ -159,7 +159,7 @@ function createRow(data, num, appendTo, isAnswer){
 }
 
 function createQuiz(data, numQuestions){
-    
+    console.log("in create quiz");
     let quiz = [];
     let quizRow = [];
    // const op1 = 
@@ -259,6 +259,11 @@ function checkBoxSelection(data){
                 if(box.checked === true){
                     let answer = question.textContent;
                     data[dataCount].answer = answer;
+
+                    const activeUser = JSON.parse(sessionStorage.getItem('user123'));
+                    //const userMessage = document.getElementById('currentUser');
+                    const currentPerson = activeUser.username;
+                    data[dataCount].user_name = currentPerson;
                     // let correctAnswer = data[rowNum-1].correct_answer;
                     if(answer === data[dataCount].correct_answer){
                      //   console.log('your were right')

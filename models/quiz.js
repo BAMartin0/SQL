@@ -40,6 +40,9 @@ Quiz.init(
     is_correct: {
       type: DataTypes.BOOLEAN,
     },
+    user_name: {
+      type: DataTypes.STRING,
+    },
   },
   {
     sequelize,

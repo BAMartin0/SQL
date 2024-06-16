@@ -40,6 +40,9 @@ const Quiz = sequelize.define("Quiz", {
   is_correct: {
     type: DataTypes.BOOLEAN,
   },
+  user_name: {
+    type: DataTypes.STRING,
+  },
 });
 
 const populateTable = async () => {
