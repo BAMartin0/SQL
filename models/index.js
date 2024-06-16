@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 
-const User = require("./User");
-const Quiz = require("./Quiz");
+const User = require("./user");
+const Quiz = require("./quiz");
 
 
 
