@@ -261,6 +261,7 @@ function checkBoxSelection(data){
                     data[dataCount].answer = answer;
 
                     const activeUser = JSON.parse(sessionStorage.getItem('user123'));
+                    
                     //const userMessage = document.getElementById('currentUser');
                     const currentPerson = activeUser.username;
                     data[dataCount].user_name = currentPerson;

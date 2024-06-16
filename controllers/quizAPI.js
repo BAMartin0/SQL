@@ -66,7 +66,7 @@ function createQuiz(data){
         allQuestions[i].incorrect_answers = results[i].incorrect_answers;
         allQuestions[i].answer = '';
         allQuestions[i].is_correct = false;
-        allQuestions[i].user_name = 'tommy';
+        allQuestions[i].user_name = '';
     }
     //saveQuiz(allQuestions);
     console.log(allQuestions);
