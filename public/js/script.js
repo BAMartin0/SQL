@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const password = document.getElementById('inputPassword5');
     const email = document.getElementById('exampleFormControlInput1');
     const username = document.getElementById('username');
-    console.log(signIn);
+    //console.log(signIn);
 
     signIn.addEventListener('click', async(event) => {
         event.preventDefault();
