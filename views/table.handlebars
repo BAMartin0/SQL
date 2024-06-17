@@ -28,10 +28,10 @@
         }
 
         tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: red !important;
         }
-                tr:nth-child(odd) {
-            background-color: lightblue;
+        tr:nth-child(odd) {
+            background-color: green !important;
         }
 
         tr:hover {
@@ -80,7 +80,7 @@
             </tr>
         </thead>
         <tbody>
-            {{#each score}}
+            {{#each quizzes}}
             <tr>
                 <td>{{this.question}}</td>
                 <td>{{this.correct_answer}}</td>
@@ -89,7 +89,6 @@
             {{/each}}
         </tbody>
     </table>
-
     <script src="/js/results.js"></script>
 </body>
 

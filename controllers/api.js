@@ -66,9 +66,9 @@ router.post('/user',(req,res)=>{
 
 router.post('/search',(req,res)=>{
 
-    getQuestions('tomy_boy', 'Politics')
+    getQuestions(req.body)
     .then((data)=>{
-        res.json(data);
+        res.render('score',{quizzes});;
     })
     .catch((err)=>{
         console.error('error in server api',err);
@@ -95,18 +95,15 @@ function getCategory(input){
     return answer;
 }
 
+async function getQuestions(tableFilters){
 
-
-
-
-async function getQuestions(user, category){
-
+    console.log(tableFilters);
     try{
         const question = await Quiz.findAll({
             attributes:['question','correct_answer','answer','is_correct'],
             where: {
-                user_name: `${user}`,
-                category: `${category}`,
+                user_name: `${tableFilters.user}`,
+                category: `${tableFilters.category}`,
             },
         });
         // console.log(question);
@@ -121,6 +118,26 @@ async function getQuestions(user, category){
 
 }
 
+router.get('/')
+
+// router.post('/score',async(req, res)=>{
+//     const tableFilters = req.body;
+//     try{
+//         const quizzes = await Quiz.findAll({
+//             attributes:['question','correct_answer','answer'],
+//             where: {
+//                 user_name: `${tableFilters.user}`,
+//                 category: `${tableFilters.category}`,
+//             },
+//         });
+//         res.render('score',{quizzes});
+//     }
+//     catch(error){
+//         console.error('could npt get table data',error);
+//         res.status(500).send('Initial server error');
+
+//     }
+// });
 
 
 module.exports = router;

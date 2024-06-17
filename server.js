@@ -5,6 +5,7 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 //const connectTodb = require('./controllers/psql.js');
 const hbs = exphbs.create({});
+const { engine } = require('express-handlebars');
 
 const Quiz = require("./models/quiz.js");
 const sequelize = require("./config/connection");
@@ -19,7 +20,14 @@ app.use(routes);
 
 const PORT = process.env.PORT || 3001;
 
-app.engine('handlebars', hbs.engine);
+app.engine('handlebars', engine({
+  defaultLayout: 'main',
+  runtimeOptions: {
+    allowProtoPropertiesByDefault: true,
+    allowProtoMethodsByDefault: true,
+  },
+}));
+
 app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname, 'public')));

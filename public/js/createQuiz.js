@@ -91,12 +91,6 @@ function fixForm(form){
 //translate user inputs into the values that the api needs to send to the quiz website
 function processUserInput(input){
 
-    // if(input.type === 'multiple'){
-    //     input.type = 'multiple';
-    // }
-    // if(input.type === 'boolean'){
-    //     input.type = 'boolean';
-    // }
     if(input.category === 'Mythology')input.category = 20;
     else if(input.category === 'Sports')input.category = 21;
     else if(input.category === 'Geography')input.category = 22;
