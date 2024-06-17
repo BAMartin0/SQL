@@ -3,7 +3,7 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
-const connectTodb = require('./controllers/psql.js');
+//const connectTodb = require('./controllers/psql.js');
 const hbs = exphbs.create({});
 
 const Quiz = require("./models/quiz.js");
