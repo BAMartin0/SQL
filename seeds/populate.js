@@ -1,49 +1,50 @@
 const fs = require("fs");
 const path = require("path");
 const sequelize = require("../config/connection");
-const { DataTypes } = require("sequelize");
+// const { DataTypes } = require("sequelize");
+const {Quiz} = require('../models/');
 
 
 // Define the Quiz model
-const Quiz = sequelize.define("Quiz", {
-  id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-  user_id: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: "user",
-      key: "id",
-    },
-  },
-  question: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  correct_answer: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  category: {
-    type: DataTypes.STRING,
-  },
-  difficulty: {
-    type: DataTypes.STRING,
-  },
-  answer: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  is_correct: {
-    type: DataTypes.BOOLEAN,
-  },
-  user_name: {
-    type: DataTypes.STRING,
-  },
-});
+// const Quiz = sequelize.define("Quiz", {
+//   id: {
+//     type: DataTypes.INTEGER,
+//     allowNull: false,
+//     primaryKey: true,
+//     autoIncrement: true,
+//   },
+//   user_id: {
+//     type: DataTypes.INTEGER,
+//     references: {
+//       model: "user",
+//       key: "id",
+//     },
+//   },
+//   question: {
+//     type: DataTypes.STRING,
+//     allowNull: false,
+//   },
+//   correct_answer: {
+//     type: DataTypes.STRING,
+//     allowNull: false,
+//   },
+//   category: {
+//     type: DataTypes.STRING,
+//   },
+//   difficulty: {
+//     type: DataTypes.STRING,
+//   },
+//   answer: {
+//     type: DataTypes.STRING,
+//     allowNull: false,
+//   },
+//   is_correct: {
+//     type: DataTypes.BOOLEAN,
+//   },
+//   user_name: {
+//     type: DataTypes.STRING,
+//   },
+// });
 
 const populateTable = async () => {
   console.log('start populating table');

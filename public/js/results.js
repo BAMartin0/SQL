@@ -42,7 +42,10 @@ const getResult = (input) =>
     .then((res)=>res.json())
     .then((data)=>{
  
+        console.log('data returned');
+        console.log(data);
         return data;
+        
     })
     .catch((error)=>{
         console.error('error POST',error);

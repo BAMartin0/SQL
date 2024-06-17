@@ -3,6 +3,7 @@ const router = require('express').Router();
 const path = require('path');
 const fs = require('fs');
 const {callAPI, createQuiz, getQuizURL, saveQuiz} = require('./quizAPI.js');
+const Quiz = require('../models/quiz.js');
 
 
 router.post('/input',(req,res)=>{
@@ -65,10 +66,15 @@ router.post('/user',(req,res)=>{
 
 router.post('/search',(req,res)=>{
 
-    
-    const category = getCategory(req.body);
-   
-    res.json(category);
+    getQuestions('tomy_boy', 'Politics')
+    .then((data)=>{
+        res.json(data);
+    })
+    .catch((err)=>{
+        console.error('error in server api',err);
+    });
+
+  //  const category = getCategory(req.body);
 
 });
 
@@ -88,5 +94,33 @@ function getCategory(input){
   
     return answer;
 }
+
+
+
+
+
+async function getQuestions(user, category){
+
+    try{
+        const question = await Quiz.findAll({
+            attributes:['question','correct_answer','answer','is_correct'],
+            where: {
+                user_name: `${user}`,
+                category: `${category}`,
+            },
+        });
+        // console.log(question);
+        return question;
+
+    }
+    catch(error){
+        console.error('could npt get table data',error);
+
+    }
+
+
+}
+
+
 
 module.exports = router;
