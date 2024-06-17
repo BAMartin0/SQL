@@ -3,13 +3,9 @@ const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-    host: process.env.DB_HOST || '127.0.0.1',
+    host: process.env.DB_HOST || 'localhost',
     dialect: 'postgres',
     port: process.env.DB_PORT || 5432,
-    logging: false, // Disable logging; default: console.log
-    dialectOptions: {
-        // Additional options if needed
-    },
 });
 
 const testConnection = async () => {
