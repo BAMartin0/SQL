@@ -1,4 +1,4 @@
-//const Sequelize = require("sequelize");
+// const Sequelize = require("sequelize");
 
 const User = require("./user");
 const Quiz = require("./quiz");
@@ -6,7 +6,7 @@ const Quiz = require("./quiz");
 
 
 // sequelize
-//   .sync({ force: true }) // Set force to true to drop existing tables and recreate them
+//   .sync({ force: false }) // Set force to true to drop existing tables and recreate them
 //   .then(() => {
 //     console.log("Database synchronized successfully");
 //   })
