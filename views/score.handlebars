@@ -1,4 +1,74 @@
 <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quiz Results</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Quiz Results</h1>
+    <form id="createQuizTable">
+        <table>
+            <tr>
+                <td>
+                    <select id="category-table12" name="category" class="form-select"
+                        aria-label="Default select example">
+                        <option value="">Category</option>
+                        <option value="20">Mythology</option>
+                        <option value="21">Sports</option>
+                        <option value="22">Geography</option>
+                        <option value="23">History</option>
+                        <option value="24">Politics</option>
+                        <option value="25">Art</option>
+                        <option value="26">Celebrities</option>
+                        <option value="27">Animals</option>
+                        <option value="28">Vehicles</option>
+                    </select>
+                </td>
+                <td>
+                    <input id="scoreUser" class="form-control" type="text" placeholder="Default input" aria-label="default input example">
+                </td>
+                <td>
+                    <input id="searchButton" class="btn btn-primary" type="submit" value="Search">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Correct Answer</th>
+                <th>Your Answer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dynamic content will be inserted here -->
+        </tbody>
+    </table>
+    <script src="/js/results.js"></script>
+</body>
+
+</html>
+
+{{!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -89,4 +159,4 @@
     <script src="/js/results.js"></script>
 </body>
 
-</html>
+</html> --}}

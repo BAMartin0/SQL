@@ -264,7 +264,7 @@ function checkBoxSelection(data){
                     
                     //const userMessage = document.getElementById('currentUser');
                     const currentPerson = activeUser.username;
-                    data[dataCount].user_name = currentPerson;
+                    data[dataCount].username = currentPerson;
                     // let correctAnswer = data[rowNum-1].correct_answer;
                     if(answer === data[dataCount].correct_answer){
                      //   console.log('your were right')

@@ -40,8 +40,9 @@ const Quiz = sequelize.define("Quiz", {
   is_correct: {
     type: DataTypes.BOOLEAN,
   },
-  user_name: {
+  username: {
     type: DataTypes.STRING,
+    allowNull: false,
   },
 });
 
@@ -53,7 +54,7 @@ const populateTable = async () => {
     await sequelize.sync({ force: false }); // This will drop the table if it already exists and create a new one
     
     const data = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "quiz.json"), "utf8")
+      fs.readFileSync(path.join(__dirname, "./quiz.json"), "utf8")
     );
     console.log('this is the data @@@@@@@@@@@@@@@@@@@@@@@@',data);
 

@@ -1,9 +1,16 @@
 const Sequelize = require("sequelize");
+const sequelize = require("../config/connection");
+const User = require("./user");
+const Quiz = require("./quiz");
 
-const User = require("./User");
-const Quiz = require("./Quiz");
+User.hasMany(Quiz, {
+  foreignKey: 'user_id', 
+  onDelete: 'CASCADE'
+})
 
-
+Quiz.belongsTo(User, {
+  foreignKey: "user_id"
+})
 
 Sequelize
   .sync({ force: false }) // Set force to true to drop existing tables and recreate them

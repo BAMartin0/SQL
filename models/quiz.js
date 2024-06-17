@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-const User = require("./User");
+const User = require("./user");
 
 class Quiz extends Model {}
 
@@ -15,7 +15,7 @@ Quiz.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "user",
+        model: User,
         key: "id",
       },
     },
@@ -40,8 +40,9 @@ Quiz.init(
     is_correct: {
       type: DataTypes.BOOLEAN,
     },
-    user_name: {
+    username: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {

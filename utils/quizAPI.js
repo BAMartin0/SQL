@@ -4,7 +4,7 @@ const fs = require('fs');
 const {populateTable} = require('../seeds/populate.js')
 
 class Question{
-    constructor(type, difficulty, category, question, correct_answer, incorrect_answers, answer, is_correct, user_name){
+    constructor(type, difficulty, category, question, correct_answer, incorrect_answers, answer, is_correct, username){
         this.type = type;
         this.difficulty = difficulty;
         this.category = category;
@@ -13,7 +13,7 @@ class Question{
         this.incorrect_answers = incorrect_answers;
         this.answer = answer;
         this.is_correct = is_correct;
-        this.user_name = user_name;
+        this.username = username;
     }
 }
 
@@ -66,7 +66,7 @@ function createQuiz(data){
         allQuestions[i].incorrect_answers = results[i].incorrect_answers;
         allQuestions[i].answer = '';
         allQuestions[i].is_correct = false;
-        allQuestions[i].user_name = '';
+        allQuestions[i].username = '';
     }
     //saveQuiz(allQuestions);
     console.log(allQuestions);

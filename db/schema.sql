@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS triviapg_db;
+DROP DATABASE IF EXISTS trivias_db;
 
-CREATE DATABASE triviapg_db;
+CREATE DATABASE trivias_db;

@@ -1,26 +1,31 @@
-const router = require('express').Router();
-const path = require('path');
-const fs = require('fs');
-const {callAPI, createQuiz, getQuizURL, saveQuiz} = require('./quizAPI.js');
+const router = require("express").Router();
+const path = require("path");
+const fs = require("fs");
+const {
+  callAPI,
+  createQuiz,
+  getQuizURL,
+  saveQuiz,
+} = require("../utils/quizAPI.js");
 
-const api = require('./api.js');
+const api = require("./api/api.js");
 
-router.use('/api',api)
+router.use("/api", api);
 
-router.get('/', async(req, res)=>{
-    res.render('login');
+router.get("/", async (req, res) => {
+  res.render("login");
 });
 
-router.get('/quiz', async(req, res)=>{
-    res.render('quiz');
+router.get("/quiz", async (req, res) => {
+  res.render("quiz");
 });
 
-router.get('/home', async(req, res)=>{
-    res.render('login');
+router.get("/home", async (req, res) => {
+  res.render("login");
 });
 
-router.get('/score', async(req, res)=>{
-    res.render('score');
+router.get("/score", async (req, res) => {
+  res.render("score");
 });
 
 // router.post('/api/input',(req,res)=>{
@@ -33,7 +38,7 @@ router.get('/score', async(req, res)=>{
 //     .then((data)=>{
 
 //         let quiz = createQuiz(data);
-        
+
 //      //   console.log(quiz);
 //         res.json(quiz);
 //        //res.send(quiz);
