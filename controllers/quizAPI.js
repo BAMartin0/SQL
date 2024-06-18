@@ -94,7 +94,7 @@ async function getUserName(){
         const data = await  fs.readFileSync(path.join(findFolder, "users.json"), "utf8");
 
         const users = await JSON.parse(data);
-        console.log('444444444444444444$$$$$$$$$$$$$$$$$$$$$$$$$$',users.username);
+        // console.log('444444444444444444$$$$$$$$$$$$$$$$$$$$$$$$$$',users.username);
         return users.username;
     }
     catch(error){

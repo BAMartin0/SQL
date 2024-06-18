@@ -5,13 +5,15 @@ const Quiz = require("./quiz");
 
 
 
-Sequelize
-  .sync({ force: false }) // Set force to true to drop existing tables and recreate them
-  .then(() => {
-    console.log("Database synchronized successfully");
-  })
-  .catch((error) => {
-    console.error("Error synchronizing database:", error);
-  });
+// Sequelize
+//   .sync({ force: false }) // Set force to true to drop existing tables and recreate them
+//   .then(() => {
+//     console.log("Database synchronized successfully");
+//   })
+//   .catch((error) => {
+//     console.error("Error synchronizing database:", error);
+//   });
+
+module.exports = {User, Quiz};
 
   

@@ -3,6 +3,7 @@ const router = require('express').Router();
 const path = require('path');
 const fs = require('fs');
 const {callAPI, createQuiz, getQuizURL, saveQuiz} = require('./quizAPI.js');
+const Quiz = require('../models/quiz.js');
 
 
 router.post('/input',(req,res)=>{
@@ -65,10 +66,15 @@ router.post('/user',(req,res)=>{
 
 router.post('/search',(req,res)=>{
 
-    
-    const category = getCategory(req.body);
-   
-    res.json(category);
+    getQuestions(req.body)
+    .then((data)=>{
+        res.render('score',{quizzes});;
+    })
+    .catch((err)=>{
+        console.error('error in server api',err);
+    });
+
+  //  const category = getCategory(req.body);
 
 });
 
@@ -88,5 +94,50 @@ function getCategory(input){
   
     return answer;
 }
+
+async function getQuestions(tableFilters){
+
+    console.log(tableFilters);
+    try{
+        const question = await Quiz.findAll({
+            attributes:['question','correct_answer','answer','is_correct'],
+            where: {
+                user_name: `${tableFilters.user}`,
+                category: `${tableFilters.category}`,
+            },
+        });
+        // console.log(question);
+        return question;
+
+    }
+    catch(error){
+        console.error('could npt get table data',error);
+
+    }
+
+
+}
+
+router.get('/')
+
+// router.post('/score',async(req, res)=>{
+//     const tableFilters = req.body;
+//     try{
+//         const quizzes = await Quiz.findAll({
+//             attributes:['question','correct_answer','answer'],
+//             where: {
+//                 user_name: `${tableFilters.user}`,
+//                 category: `${tableFilters.category}`,
+//             },
+//         });
+//         res.render('score',{quizzes});
+//     }
+//     catch(error){
+//         console.error('could npt get table data',error);
+//         res.status(500).send('Initial server error');
+
+//     }
+// });
+
 
 module.exports = router;

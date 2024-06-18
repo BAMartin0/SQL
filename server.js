@@ -3,11 +3,9 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
+//const connectTodb = require('./controllers/psql.js');
 const hbs = exphbs.create({});
-
-// const PORT = 3001;
-// const api = require('./quiz_routes/index.js');
-// const page = require('./quiz_routes/index.js')
+const { engine } = require('express-handlebars');
 
 const Quiz = require("./models/quiz.js");
 const sequelize = require("./config/connection");
@@ -18,31 +16,26 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 
-// app.use('/api',api);
-// app.use('/page',page);
-
 app.use(routes);
 
 const PORT = process.env.PORT || 3001;
 
-app.engine('handlebars', hbs.engine);
+app.engine('handlebars', engine({
+  defaultLayout: 'main',
+  runtimeOptions: {
+    allowProtoPropertiesByDefault: true,
+    allowProtoMethodsByDefault: true,
+  },
+}));
+
 app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(require('./controllers/homepage'));
-//app.use(require('./controllers/quiz-routes'));
 
 app.set("views", path.join(__dirname, "views"));
 
-// app.use(require('./controllers/sql-routes'));
-
-
-// ? Starts the server to begin listening
-
-// app.listen(PORT, () => {
-//   console.log('Server listening on: http://localhost:' + PORT);
-// });
+//connectTodb();
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
@@ -51,3 +44,5 @@ sequelize.sync({ force: false }).then(() => {
 //my repo 6/14/2024 16:15
 
 //my updated repo named new-branch-main 6/16/2024 15:51
+
+//most recent update to new-branch-main 6/17/2024 7:26
