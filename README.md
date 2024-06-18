@@ -18,7 +18,7 @@
 
 An interactive quiz site with score tracking.
 
-URL: [Added when published]
+URL: https://sql-3-j497.onrender.com/home
 
 ## Credits
 
